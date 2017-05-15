@@ -7,16 +7,19 @@ H1 {
   font-family: 'Roboto', serif;
   font-size: 30px;
   font-weight: 400;
+  margin: 55px 0 0 0;
 }
 
 p {
   font-family: 'Roboto', serif;
   font-size: 18px;
   font-weight: 300;
+  line-height: 28px;
 }
 
 ul {
   font-family: 'Roboto', serif;
   font-size: 18px;
   font-weight: 300;
+  line-height: 35px;
 }
