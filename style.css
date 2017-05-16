@@ -17,9 +17,28 @@ p {
   line-height: 28px;
 }
 
+.code {
+  font-family: 'Roboto Mono', monospace;
+}
+
 ul {
   font-family: 'Roboto', serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 35px;
+}
+
+/* I dont know how this is working, but it is working lol */
+@media screen and (max-width: 900px) {
+  #page-wrap {
+       width: 450px;
+       margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #page-wrap {
+       width: 280px;
+       margin: 0 auto;
+  }
 }

@@ -4,33 +4,38 @@
    <meta charset="UTF-8">
    <title>Git Notes</title>
  <link rel="stylesheet" href="./style.css" type="text/css">
- <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:300,400" rel="stylesheet">
  </head>
 
  <body>
    <div id="page-wrap">
+     <p>
+       <a href="index.html">< Back Home</a>
+     </p>
+
      <h1>Git Notes</h1>
       <ul style="list-style-type:square">
-          <li>Git is a version control system that runs on your computer to track changes</li>
+          <li>Git is a version control system that runs on your computer (local) to track changes</li>
           <li>Projects, aka, Repos can be pushed to a server - services like GitHub and BitBucket</li>
-          <li>To start tracking changes locally, use <strong>cd /Users/JC/directory/folder</strong> - Then run <strong>git init</strong></li>
-          <li>Add the files you want git to track with <strong>git add FILE</strong> for a single file or <strong>git add --all</strong> or <strong>git add -A</strong> for all the files in the folder</li>
-          <li>After git add - files are now staged - to commit, use <strong>git commit -m 'Commit message'</strong></li>
-          <li>Run <strong>git status</strong> to check status after action</li>
-          <li></li>
+          <li>Git has three main states that files can reside in: committed, modified, and staged</li>
+          <li>To start tracking changes locally, use: <span class="code">cd /Users/JC/directory/folder</span><br />Then run: <span class="code">git init</span></li>
+          <li>Add the files you want git to track with: <span class="code">git add FILE</span> for a single file <br />or: <span class="code">git add --all</span> or: <span class="code">git add -A</span> for all the files in the folder</li>
+          <li>After git add, files are now staged. To commit, use: <span class="code">git commit -m 'Commit message'</span></li>
+          <li>If commit message is forgotten, save and exit by pressing: <span class="code">Esc</span> and then <span class="code">:x</span></li>
+          <li>Run: <span class="code">git status</span> to check status after action</li>
+          <li>Branches: <span class="code">git branch branch-name</span> (This command creates a branch but does not switch you to that branch)</li>
+          <li>To checkout branch just created: <span class="code">git checkout branch-name</span></li>
+          <li>To straight up checkout a branch: <span class="code">git checkout -b branch-name</span></li>
+          <li>Simple merging - Start by checking out master branch: <span class="code">git checkout master</span></li>
+          <li>Then, merge in branch-name: <span class="code">git merge branch-name</span></li>
+          <li>If you don’t plan on using that branch anymore, you can delete: <span class="code">git branch -d branch-name</span></li>
     </ul>
     <p>
     <h1>Git Related Notes</h1>
       <ul style="list-style-type:square">
-        <li>It is recommended to create a readme file - either as <strong>.txt</strong> or <strong>.md (markdown language)</strong></li>
-        <li>To push the project to GitHub - do <strong>git remote add origin remote repository URL</strong> then <strong>git push -u origin master</strong></li>
-      </ul>
-    </p>
-    <p>
-    <h1>Terminal Notes (Eventually to be moved to its own page)</h1>
-      <ul style="list-style-type:square">
-        <li>To open a file with a program in Terminal, type <strong>program file.type</strong></li>
-        <li>To instantly create files, type <strong>touch file.type</strong></li>
+        <li>It is recommended to create a readme file, either as: <span class="code">.txt</span> or: <span class="code">.md (markdown language)</span></li>
+        <li>To push the project to GitHub: <span class="code">git remote add origin remote repository URL</span> then: <span class="code">git push -u origin master</span></li>
+        <li>To pull down from a repo: <span class="code">git pull --all</span></li>
       </ul>
     </p>
     <p>
