@@ -1,0 +1,152 @@
+<?php
+
+/*
+
+
+-= OOP PHP Notes =-
+
+->  MVC Model (relating to OOP)
+MVC = Model, View, Controller - Each does something specific:
+- Controller takes care of all the requests from the user - the controller is responsible for getting input from the user - pushing to the model (database)
+- Model takes care of all the connections to the database
+- View shows the code or view that the user sees - the view is responsible for communicating with the model and displaying it to the user
+
+
+-> Includes
+It might be wise to setup an includes folder that contains the object oriented code. You can add ".inc" to the file name to signify this like so: "example.inc.php"
+
+
+-> Classes & Objects
+Classes are basically a big block that contains a lot of different information including properties (variables) and methods (functions) that focus on one thing. They are a template or blueprint. You create a bunch of classes and then can create objects from it (by instantiating it).
+
+// Class
+  <?php
+    class HelloClass {
+      // Properties
+      // Methods
+    }
+
+// Object
+$object = new HelloClass;  // Instantiating
+$object->property(); // Accessing a property in the HelloClass
+
+Naming:
+When creating a class, you want to start with "class" and start with a capital letter, then camel case the name "NewClass":
+
+  <?php
+    class NewClass {
+      // Properties
+      // Methods
+    }
+
+Instantiating a Class:
+This means you are creating an object that contains all information regarding the class. To do this, you use "$object = new NameOfClass;" - with this object, you have access to all the properties and methods of the class
+
+<?php
+  class NewClass {
+    // Properties
+    // Methods
+  }
+
+$object = new NameClass;
+
+
+Scope: PHP has three scopes = Public, Private, Protected
+  Public - When public is specified in front of a property or method, it means you can access it from anywhere inside the code
+  Protected - Is for any class that extends to the current class - so can only access from a class that is extended from the protected class
+  Private - Only can use properties and methods of private type in their own class - as an example - can have a private variable, but a public function (in the same class), the function could access the variable and since its public, could get info from it outside the class
+Extends: You can extend classes in the following way "class NewClass extends ParentClass" - by doing this, all the properties and methods in ParentClass become available to you in NewClass, as long as it is either public or protected. When a class is extended, you can looking at the classes as one class (in terms of accessing code) Ex:
+
+<?php
+class ParentClass {
+  // Properties & Methods
+    protected $name = "Cool";
+}
+class NewClass extends ParentClass {
+  // Properties & Methods from Parent class (if public or protected)
+public function name (){
+  return $this->name;
+  }
+}
+
+// Accessing
+<?php
+  object = new NewClass;
+  echo $object->name(); (Spits out "Cool")
+
+Running through the above code: Protected &name from Parent class can not be accessed from anywhere except NewClass - In NewClass you can create a function that can access $name - Since funtion name is public in NewClass, we can access from the outside world
+Set: It is common to add "set" in front of method name for a method that changes or inserts data into a DB:
+
+<?php
+public function setNewProperty(){
+  // stuff
+}
+
+Get: It is common to add "get" in front of method name for a method that gets data from a DB:
+
+<?php
+public function getProperty(){
+  // stuff
+}
+
+
+$this->property: If you are referencing a property inside the class, you would use "$this->" and it's name without "$" in front. Ex:
+
+<?php
+class NewClass{
+public function setNewProperty($newdata){
+  public $data = "text";  // Property
+  $this->data = $newdata;  // Accessing $data and setting it $newdata
+  }
+}
+
+Magic Methods: Methods built into the PHP language that do specific things
+  Construct - Only create one of these, this runs code as soon as the class has been loaded. An example would be if you wanted to open a database connection. EX:
+
+    <?php
+      public function __construct() {
+        // Runs as soon as class is called
+      }
+
+  Destruct - Runs as soon as class has stopped running. An example would be if you wanted to close a database connection EX:
+
+    <?php
+      public function __destruct() {
+        // Runs as soon as class finished
+      }
+
+  toString: Magic method that allows you to call an object and see the components as a string. It is automatically called when you place an object of a class inside the echo or print function - you can use __toString() method to output everything. toString must have a return value - and after return, you put the data you want to return. EX:
+
+  <?php
+    public $error = "This is a new class";
+
+    public function __toString(){
+    echo "toString method";
+    return $this->error;
+    }
+
+__CLASS__ 
+
+Destroying an object: You can delete an object after it has been instantiated. To do this, you would use "unset()". This would run the __destruct() method inside the class. EX:
+
+<?php
+  $object = new NewClass;
+  unset($object); // Destroying the object
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/
+
+?>
